@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace LeaveManagement.Web.Models
 {
@@ -16,6 +17,8 @@ namespace LeaveManagement.Web.Models
         public string Email { get; set; }
 
         [DisplayName("Date Joined")]
-        public string DateJoined { get; set; }
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
+        [DataType(DataType.Date)]
+        public DateTime DateJoined { get; set; }
     }
 }
